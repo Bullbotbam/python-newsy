@@ -1,6 +1,4 @@
-#python-newsy
-
-# deep-thoughts
+# Python Newsy App
 
 social media application
 
@@ -22,25 +20,11 @@ social media application
 
 ## Description
 
-A social media application to share thoughts and reactions with friends.
+A social media application to share thoughts and reactions with your Python friends and colleagues.
 
 ## Installation
 
-For developers looking to develop something similar to this app, you must install [Node.js](https://nodejs.org/en/). Once you have Node.js installed, then install Node Package Manager(npm).
-
-first...
-
-```
-npm init -y
-```
-
-then...
-
-```
-npm install create-react-app
-```
-
-Other dependencies added are graphql, mongoose, node.js, express, react, apollo-server-express, jsonwebtoken, material-ui, bcrypt.
+This app uses python with django flask and sqlalchemy/pymysql
 
 ## Purpose
 
