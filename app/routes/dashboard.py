@@ -1,10 +1,23 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, session
+from app.models import Post
+from app.db import get_db
 
 bp = Blueprint('dashboard', __name__, url_prefix='/dashboard')
 
 @bp.route('/')
 def dash():
-    return render_template('dashboard.html')
+    db = get_db()
+    posts = (
+        db.query(Post)
+        .filter(Post.user.id == session.get('user.id'))
+        .order_by(Post.created_at())
+        .all()
+    )
+    return render_template(
+        'dashboard.html', 
+        posts=posts,
+        loggedIn=session.get('LoggedIn')
+        )
 
 @bp.route('/edit/<id>')
 def edit():
