@@ -160,6 +160,4 @@ def delete(id):
 
     return '', 204
 
-    post = db.query(Post).filter(Post.id == id).one()
-    post.title = data['title']
-    db.commit()
+   

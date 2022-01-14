@@ -9,14 +9,14 @@ def dash():
     db = get_db()
     posts = (
         db.query(Post)
-        .filter(Post.user.id == session.get('user.id'))
-        .order_by(Post.created_at())
+        .filter(Post.user_id == session.get('user.id'))
+        .order_by(Post.created_at.desc())
         .all()
     )
     return render_template(
         'dashboard.html', 
         posts=posts,
-        loggedIn=session.get('LoggedIn')
+        loggedIn=session.get('loggedIn')
         )
 
 @bp.route('/edit/<id>')
